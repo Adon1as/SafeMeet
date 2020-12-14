@@ -1,0 +1,7 @@
+from .model import Model
+
+class AtestadoModel(Model):
+    def __init__(self,id,arquivo,cid10):
+        self.id = id
+        self.arquivo = arquivo
+        self.cid10 = cid10
