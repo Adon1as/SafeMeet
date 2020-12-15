@@ -14,7 +14,7 @@ class PessoaModel(Model):
         d = {}
         count = 0
         for c in self.contato:
-             d.update({count:c.serialize()})
+             d.update({count:c.toDict()})
              count = count+1
             
         return {'cpf':self.cpf,'nome':self.nome,'sobrenome':self.sobrenome,'dataNacimento':self.dataNacimento,'instituicao':self.instituicao,'endereco':self.endereco, 'contato':d}        
