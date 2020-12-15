@@ -25,14 +25,8 @@ class EventoDao():
                 duracao = i['duracao']
                 quantidade = i['quantidade']
                 descricao = i['descricao']
-<<<<<<< HEAD
-                id_local = i['local_id_local']
-                
-                evento = EventoModel(id, comeco, fim, duracao, quantidade, descricao, id_local)
-=======
                 local =  LocalDao().getLocal(i['id_local'])
                 evento = eventoModel(id, comeco, fim, duracao, quantidade, descricao,local)
->>>>>>> 94faf6510d6f681e137bbe80a29252475746de5f
                 eventos.append(evento)
 
         return eventos

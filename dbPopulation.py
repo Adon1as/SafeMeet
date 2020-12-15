@@ -10,7 +10,6 @@ from app.model.eventoModel import EventoModel
 from app.model.localModel import LocalModel
 from app.model.participanteModel import ParticipanteModel
 
-
 from app.conection import mysql
 from app.conection import app
 import random
