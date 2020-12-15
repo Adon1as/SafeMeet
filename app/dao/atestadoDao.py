@@ -5,7 +5,7 @@ class AtestadoDao():
 
     def setAtestado(self,cpf,atestado:AtestadoModel):
         cursor = mysql.connection.cursor()
-        cursor.execute('insert into atestados(arquivo,cid-10,Participante_Pessoa_cpf) velues(%s,%s,%s)',(cpf,atestado.arquivo,atestado.cid10))
+        cursor.execute('insert into atestados(arquivo,cid-10,Participante_Pessoa_cpf) values(%s,%s,%s)',(cpf,atestado.arquivo,atestado.cid10))
         mysql.connection.commit()
         cursor.close()
 
@@ -26,6 +26,12 @@ class AtestadoDao():
                 atestados.append(atestado)
         
         return atestados
+
+    def updateAtestado(self, atestado:AtestadoModel):
+        cursor = mysql.connection.cursor()
+        cursor.execute('update atestados set arquivo = %s, cid-10 = %s where id_atestado = %s', (atestado.arquivo, atestado.cid10, id))
+        mysql.connection.commit()
+        cursor.close()
     
     def deletarAtestado(self,id):
         cursor = mysql.connection.cursor()
@@ -39,4 +45,3 @@ class AtestadoDao():
         mysql.connection.commit()
         cursor.close()
     
-        

@@ -11,16 +11,15 @@ class ContatoDao():
 
     def getContatoContatosPorCpf(self,cpf):
         cursor = mysql.connection.cursor()
-        cursor.execute('select tipo, ccontato, cdescricao from contatos where Pessoas_cpf = %s',(cpf))
-        result = cursor.fetchone()
+        cursor.execute('select tipo, ccontatos, cdescricao from contatos where Pessoas_cpf = %s',(cpf,))
+        result = cursor.fetchall()
         cursor.close()
-
 
         contatos = [] 
         if result:
             for i in result:
                 tipo = i['tipo']
-                ccontato = i['ccontato']
+                ccontato = i['ccontatos']
                 cdescricao = i['cdescricao']
                 contato = ContatoModel(tipo,ccontato,cdescricao)
                 contatos.append(contato)

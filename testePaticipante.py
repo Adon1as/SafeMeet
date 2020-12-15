@@ -1,6 +1,8 @@
 from app.dao.participanteDao import ParticipanteDao
 from app.model.participanteModel import ParticipanteModel
 from app.model.contatoModel import ContatoModel
+from app.dao.contatoDao import ContatoDao
+from app.model.contatoModel import ContatoModel
 #from app.model.enderecoModel import EnderecoModel
 from app.conection import app
 
@@ -22,6 +24,12 @@ def pegar():
 
     return participante.cpf
 
+@app.route('/getContato')
+def getContato():
+    cpf = '01'
+    contato = ContatoDao.getContatoContatosPorCpf(cpf,cpf)
+
+    return contato[0].contato
     
 
 if __name__ == '__main__':
