@@ -1,6 +1,6 @@
 from .model import Model
 
-class Solicitacao(Model):
+class SolicitacaoModel(Model):
     def __init__(self,cpf,eventoId,dataHora,justificativa,aprovado):
         self.cpf = cpf
         self.eventoId = eventoId

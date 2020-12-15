@@ -11,8 +11,8 @@ from app.conection import app
 def salvar():
     contato = ContatoModel(1,'084','sl')
     
-    participante = ParticipanteModel('001','Ze','da Silva','1970-10-10','instituicao','rua 1, numero 2',contato,'1','14:30:00','14:00:00')
-    ParticipanteDao.saveParticipante(participante,participante)
+    participante = ParticipanteModel('1','Ze','da Silva','1970-10-10','instituicao','rua 1, numero 2',contato,'1','14:30:00','14:00:00')
+    ParticipanteDao.setParticipante(participante,participante)
     return 'salvo'
 
 @app.route('/pegar')
