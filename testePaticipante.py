@@ -7,8 +7,6 @@ from app.model.contatoModel import ContatoModel
 from app.conection import app
 
 
-
-
 @app.route('/salvar')
 def salvar():
     contato = ContatoModel(1,'084','sl')
