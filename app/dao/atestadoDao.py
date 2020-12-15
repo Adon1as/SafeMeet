@@ -5,14 +5,14 @@ class AtestadoDao():
 
     def setAtestado(self,cpf,atestado:AtestadoModel):
         cursor = mysql.connection.cursor()
-        cursor.execute('insert into atestados(arquivo,cid-10,Participante_Pessoa_cpf) values(%s,%s,%s)',(cpf,atestado.arquivo,atestado.cid10))
+        cursor.execute('insert into atestados(arquivo,cid-10,ppcpf) values(%s,%s,%s)',(cpf,atestado.arquivo,atestado.cid10))
         mysql.connection.commit()
         cursor.close()
 
     def getAtestadosPorCpf(self,cpf):
         
         cursor = mysql.connection.cursor()
-        cursor.execute('select id_atestado,arquivo,cid-10 from atestados where Participante_Pessoa_cpf = %s',(cpf,))
+        cursor.execute('select id_atestado,arquivo,cid-10 from atestados where ppcpf = %s',(cpf,))
         result = cursor.fetchone()
         cursor.close()
 
@@ -41,7 +41,7 @@ class AtestadoDao():
 
     def deletarAtestadosPorCpf(self,cpf):
         cursor = mysql.connection.cursor()
-        cursor.execute('delete from atestados where Participante_Pessoa_cpf = %s', (cpf,))
+        cursor.execute('delete from atestados where ppcpf = %s', (cpf,))
         mysql.connection.commit()
         cursor.close()
     

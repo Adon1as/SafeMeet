@@ -1,6 +1,6 @@
 from .model import Model
 
-class PeossoaModel(Model):
+class PessoaModel(Model):
     def __init__(self,cpf,nome,sobrenome,dataNacimento,instituicao,endereco,contato):
         self.cpf = cpf
         self.nome = nome

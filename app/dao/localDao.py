@@ -23,6 +23,6 @@ class LocalDao():
         
     def deleteLocal(self, id):
         cursor = mysql.connection.cursor()
-        cursor.execute('delete from locais where id_local = %s', (id_local,))
+        cursor.execute('delete from locais where id_local = %s', (id,))
         mysql.connection.commit()
         cursor.close()
