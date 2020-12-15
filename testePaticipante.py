@@ -1,3 +1,4 @@
+from flask import jsonify
 from app.dao.participanteDao import ParticipanteDao
 from app.model.participanteModel import ParticipanteModel
 from app.model.contatoModel import ContatoModel
@@ -5,6 +6,7 @@ from app.dao.contatoDao import ContatoDao
 from app.model.contatoModel import ContatoModel
 #from app.model.enderecoModel import EnderecoModel
 from app.conection import app
+import json
 
 
 @app.route('/salvar')
@@ -18,9 +20,16 @@ def salvar():
 @app.route('/pegar')
 def pegar():
     cpf = '001'
-    participante = ParticipanteDao.getParticipante(cpf,cpf)
+    participante = ParticipanteDao().getParticipante(cpf)
+  
+    return jsonify(participante.toDict())
 
-    return participante.cpf
+@app.route('/getTime')
+def getTime():
+    cpf = '001'
+    participante = ParticipanteDao().getParticipante(cpf)
+  
+    return participante.getTempoViagem().strftime()
 
 @app.route('/getContato')
 def getContato():

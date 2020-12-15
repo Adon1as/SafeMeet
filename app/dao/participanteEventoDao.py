@@ -24,7 +24,8 @@ class ParticipanteEventoDao():
             tratamentoEsp = result['hortratamento_especialario']
             return ParticipanteEventoModel(cpf,id,horario,tratamentoEsp)
 
-    #def updateParticipanteEvento(self, participanteEvento:ParticipanteEventoModel):
+    def updateParticipanteEvento(self, participanteEvento:ParticipanteEventoModel):
+        pass
 
     def deleteParticipanteEvento(self,id,cpf):
         cursor = mysql.connection.cursor()
@@ -32,6 +33,9 @@ class ParticipanteEventoDao():
         mysql.connection.commit()
         cursor.close()
 
-    #def getParticipantesDeEvento(self,id):
+    def getParticipantesDeEvento(self,id):
+        pass
 
-    #def getEventosDeParticipante(self,cpf):
+
+    def getEventosDeParticipante(self,cpf):
+        pass

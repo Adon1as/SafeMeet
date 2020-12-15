@@ -18,8 +18,7 @@ class ParticipanteDao():
         cursor.close()
 
         if result:
-            participante:ParticipanteModel
-            participante = PessoaDao().getPessoa(cpf)
+            participante =ParticipanteModel(PessoaDao().getPessoa(cpf))
             participante.meioDeTransporte = result['meio_transporte'] 
             participante.horarioChegada = result['horario_chegada']
             participante.horarioSaida = result['horario_saida'] 

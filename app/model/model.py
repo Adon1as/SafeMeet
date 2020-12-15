@@ -1,3 +1,3 @@
 class Model:
-    def serilize(self):
+    def toDict(self):
         return vars(self)
