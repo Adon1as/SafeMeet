@@ -1,6 +1,6 @@
-from .pessoaModel import PeossoaModel
+from .pessoaModel import PessoaModel
 
-class ParticipanteModel(PeossoaModel):
+class ParticipanteModel(PessoaModel):
     def __init__(self,cpf,nome,sobrenome,dataNacimento,instituicao,endereco,contato,meioDeTransporte,horarioChegada,horarioSaida):
         super().__init__(cpf,nome,sobrenome,dataNacimento,instituicao,endereco,contato)
         self.meioDeTransporte = meioDeTransporte

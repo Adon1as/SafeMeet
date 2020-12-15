@@ -1,7 +1,7 @@
 from ..model.eventoModel import EventoModel
 from ..conection import mysql
 
-class eventoModel():
+class EventoDao():
 
     def setEvento(self, id_local, evento:EventoModel):
         cursor = mysql.connection.cursor()
@@ -26,7 +26,7 @@ class eventoModel():
                 descricao = i['descricao']
                 id_local = i['local_id_local']
                 
-                evento = eventoModel(id, comeco, fim, duracao, quantidade, descricao, id_local)
+                evento = EventoModel(id, comeco, fim, duracao, quantidade, descricao, id_local)
                 eventos.append(evento)
 
         return eventos
